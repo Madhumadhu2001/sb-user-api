@@ -72,5 +72,12 @@ public class UserController {
             return userRepository.save(user); // ID is managed automatically
         }).orElseThrow(() -> new RuntimeException("User not found"));
     }
+    
+    
+    //to check git updation
+    @GetMapping("/{id}")
+    public User getUserById(@PathVariable Long id) {
+        return userRepository.findById(id).orElseThrow(() -> new RuntimeException("User not found"));
+    }
 
 }
